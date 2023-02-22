@@ -8,15 +8,16 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  conn.on ("connect", () => {
+    console.log ("Successfully connected to the game server")
+    conn.write ("Name: WTV")
+  // setInterval (() => {
+  //   conn.write ("Move: up")},2000)
+  })
   conn.on("data", (data) => {
   console.log (data)
+  
 })
-
-conn.on ("connect", () => {
-  console.log ("Successfully connected to the game server")
-  conn.write ("Name: WTV")
-})
-
   return conn;
 };
 
