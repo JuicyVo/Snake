@@ -32,6 +32,9 @@ const handleUserInput = function (data) {
     //console.log ("Right")
     connection.write ("Move: right")
   }
+  if (data === '\u0071') {
+    connection.write ("Say: Let's gooo")
+  }
 }
 
 
